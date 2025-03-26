@@ -31,7 +31,7 @@ export default function ProfilePage() {
     <div className="min-h-screen bg-gradient-to-b from-[#1A2130] to-[#2A3B4C] text-[#F0F4F8]">
       <header className="border-b border-[#3E6D9C]/20 bg-[#1A2130]/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/dashboard" className="flex items-center gap-2">
+          <Link href="/user/dashboard" className="flex items-center gap-2">
             <ArrowLeft className="h-5 w-5" />
             <span>Back to Dashboard</span>
           </Link>
@@ -54,7 +54,7 @@ export default function ProfilePage() {
                 <div className="relative">
                   <Avatar className="w-32 h-32 border-4 border-[#3E6D9C]">
                     <AvatarImage src="/placeholder.svg?height=128&width=128" alt="Profile" />
-                    <AvatarFallback className="text-4xl bg-[#3E6D9C]">JD</AvatarFallback>
+                    <AvatarFallback className="text-4xl bg-[#3E6D9C]">AG</AvatarFallback>
                   </Avatar>
                   <Button 
                     size="icon" 
@@ -68,8 +68,8 @@ export default function ProfilePage() {
               <div className="flex-1 text-center md:text-left">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                   <div>
-                    <h1 className="text-3xl font-bold">John Doe</h1>
-                    <p className="text-[#F0F4F8]/70">john.doe@example.com</p>
+                    <h1 className="text-3xl font-bold">Aditya Gaikwad</h1>
+                    <p className="text-[#F0F4F8]/70">adityagaikwad1305@gmail.com</p>
                   </div>
                   <Button 
                     onClick={() => isEditing ? handleSave() : setIsEditing(true)}
@@ -92,7 +92,7 @@ export default function ProfilePage() {
                 </div>
                 <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
                   <div className="bg-[#3E6D9C]/30 px-3 py-1 rounded-full text-sm">
-                    Member since Oct 2023
+                    Member since Mar 2025
                   </div>
                   <div className="bg-[#3E6D9C]/30 px-3 py-1 rounded-full text-sm">
                     5 active groups
@@ -107,31 +107,31 @@ export default function ProfilePage() {
 
           <Tabs defaultValue="profile" className="space-y-8">
             <TabsList className="bg-[#2A3B4C] border border-[#3E6D9C]/20 p-1">
-              <TabsTrigger value="profile" className="data-[state=active]:bg-[#3E6D9C] data-[state=active]:text-[#F0F4F8]">
+              <TabsTrigger value="profile" className="data-[state=active]:bg-[#3E6D9C] text-[#F0F4F8]">
                 <User className="h-4 w-4 mr-2" />
                 Profile
               </TabsTrigger>
-              <TabsTrigger value="payment" className="data-[state=active]:bg-[#3E6D9C] data-[state=active]:text-[#F0F4F8]">
+              <TabsTrigger value="payment" className="data-[state=active]:bg-[#3E6D9C] text-[#F0F4F8]">
                 <CreditCard className="h-4 w-4 mr-2" />
                 Payment Methods
               </TabsTrigger>
-              <TabsTrigger value="notifications" className="data-[state=active]:bg-[#3E6D9C] data-[state=active]:text-[#F0F4F8]">
+              <TabsTrigger value="notifications" className="data-[state=active]:bg-[#3E6D9C] text-[#F0F4F8]">
                 <Bell className="h-4 w-4 mr-2" />
                 Notifications
               </TabsTrigger>
-              <TabsTrigger value="settings" className="data-[state=active]:bg-[#3E6D9C] data-[state=active]:text-[#F0F4F8]">
+              <TabsTrigger value="settings" className="data-[state=active]:bg-[#3E6D9C] text-[#F0F4F8]">
                 <Settings className="h-4 w-4 mr-2" />
                 Settings
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="profile" className="space-y-6">
+            <TabsContent value="profile" className="space-y-6 text-white">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30">
+                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30 !text-white">
                   <CardHeader>
                     <CardTitle>Personal Information</CardTitle>
                     <CardDescription>Update your personal details</CardDescription>
@@ -142,7 +142,7 @@ export default function ProfilePage() {
                         <Label htmlFor="first-name">First Name</Label>
                         <Input 
                           id="first-name" 
-                          defaultValue="John" 
+                          defaultValue="Aditya" 
                           disabled={!isEditing}
                           className="bg-[#1A2130] border-[#3E6D9C]/30 text-[#F0F4F8] disabled:opacity-70"
                         />
@@ -151,7 +151,7 @@ export default function ProfilePage() {
                         <Label htmlFor="last-name">Last Name</Label>
                         <Input 
                           id="last-name" 
-                          defaultValue="Doe" 
+                          defaultValue="Gaikwad" 
                           disabled={!isEditing}
                           className="bg-[#1A2130] border-[#3E6D9C]/30 text-[#F0F4F8] disabled:opacity-70"
                         />
@@ -162,13 +162,13 @@ export default function ProfilePage() {
                           <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[#F0F4F8]/40" />
                           <Input 
                             id="email" 
-                            defaultValue="john.doe@example.com" 
+                            defaultValue="adityagaikwad1305@gmail.com" 
                             disabled={!isEditing}
                             className="bg-[#1A2130] border-[#3E6D9C]/30 text-[#F0F4F8] pl-10 disabled:opacity-70"
                           />
                         </div>
                       </div>
-                      <div className="space-y-2">
+                      {/* <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number</Label>
                         <Input 
                           id="phone" 
@@ -176,12 +176,12 @@ export default function ProfilePage() {
                           disabled={!isEditing}
                           className="bg-[#1A2130] border-[#3E6D9C]/30 text-[#F0F4F8] disabled:opacity-70"
                         />
-                      </div>
+                      </div> */}
                     </div>
 
                     <Separator className="bg-[#3E6D9C]/20 my-6" />
 
-                    <div className="space-y-2">
+                    {/* <div className="space-y-2">
                       <Label htmlFor="bio">Bio</Label>
                       <textarea 
                         id="bio" 
@@ -190,7 +190,7 @@ export default function ProfilePage() {
                         disabled={!isEditing}
                         className="w-full rounded-md border border-[#3E6D9C]/30 bg-[#1A2130] p-3 text-[#F0F4F8] disabled:opacity-70"
                       />
-                    </div>
+                    </div> */}
                   </CardContent>
                 </Card>
               </motion.div>
@@ -200,34 +200,34 @@ export default function ProfilePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30">
+                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30 !text-white">
                   <CardHeader>
                     <CardTitle>Default Currency</CardTitle>
                     <CardDescription>Set your preferred currency for transactions</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      {["USD", "EUR", "GBP"].map((currency, i) => (
-                        <div 
-                          key={currency}
-                          className={`flex items-center justify-between p-4 rounded-lg border-2 ${
-                            currency === "USD" 
-                              ? "border-[#00C9A7] bg-[#00C9A7]/5" 
-                              : "border-[#3E6D9C]/30 bg-[#1A2130]"
-                          }`}
-                        >
+                      {["INR", "EUR", "GBP"].map((currency, i) => (
+                            <div 
+                              key={currency}
+                              className={`flex items-center justify-between p-4 rounded-lg border-2 ${
+                                currency === "INR" 
+                                  ? "border-[#00C9A7] bg-[#00C9A7]/5" 
+                                  : "border-[#3E6D9C]/30 bg-[#1A2130]"
+                              }`}
+                            >
                           <div className="flex items-center gap-3">
                             <div className="w-10 h-10 rounded-full bg-[#3E6D9C]/20 flex items-center justify-center font-medium">
-                              {currency === "USD" ? "$" : currency === "EUR" ? "€" : "£"}
+                              {currency === "INR" ? "₹" : currency === "EUR" ? "€" : "£"}
                             </div>
                             <div>
                               <div className="font-medium">{currency}</div>
                               <div className="text-sm text-[#F0F4F8]/70">
-                                {currency === "USD" ? "US Dollar" : currency === "EUR" ? "Euro" : "British Pound"}
+                                {currency === "INR" ? "Indian Rupee" : currency === "EUR" ? "Euro" : "British Pound"}
                               </div>
                             </div>
                           </div>
-                          {currency === "USD" && (
+                          {currency === "INR" && (
                             <div className="w-5 h-5 rounded-full bg-[#00C9A7] flex items-center justify-center">
                               <Check className="w-3 h-3 text-[#1A2130]" />
                             </div>
@@ -246,7 +246,7 @@ export default function ProfilePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30">
+                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30 !text-white">
                   <CardHeader className="flex flex-row items-center justify-between">
                     <div>
                       <CardTitle>Payment Methods</CardTitle>
@@ -307,7 +307,7 @@ export default function ProfilePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30">
+                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30 !text-white">
                   <CardHeader>
                     <CardTitle>Notification Preferences</CardTitle>
                     <CardDescription>Manage how you receive notifications</CardDescription>
@@ -348,7 +348,7 @@ export default function ProfilePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30">
+                <Card className="bg-[#2A3B4C] border-[#3E6D9C]/30 !text-white">
                   <CardHeader>
                     <CardTitle>Account Settings</CardTitle>
                     <CardDescription>Manage your account preferences</CardDescription>
